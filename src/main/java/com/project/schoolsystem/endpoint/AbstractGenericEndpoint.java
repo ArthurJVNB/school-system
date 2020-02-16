@@ -1,8 +1,6 @@
 package com.project.schoolsystem.endpoint;
 
-import com.project.schoolsystem.model.School;
-import com.project.schoolsystem.service.SchoolService;
-import com.project.schoolsystem.service.ServiceCrud;
+import com.project.schoolsystem.service.SimpleServiceCrud;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,11 +12,11 @@ import javax.validation.constraints.NotNull;
 import java.util.Optional;
 
 @RestController
-public abstract class AbstractEndpoint<T, IdType> {
-    protected final ServiceCrud<T, IdType> service;
+public abstract class AbstractGenericEndpoint<T, IdType> {
+    protected final SimpleServiceCrud<T, IdType> service;
 
     @Autowired
-    public AbstractEndpoint(ServiceCrud<T, IdType> service) {
+    public AbstractGenericEndpoint(SimpleServiceCrud<T, IdType> service) {
         this.service = service;
     }
 

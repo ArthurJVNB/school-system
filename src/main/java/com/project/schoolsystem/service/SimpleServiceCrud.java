@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public interface ServiceCrud<T, IdType> {
+public interface SimpleServiceCrud<T, IdType> {
     List<T> listAll();
     Optional<T> getOptionalById(IdType id);
     T save(T t);

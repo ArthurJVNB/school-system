@@ -1,6 +1,8 @@
 package com.project.schoolsystem.model;
 
 import javax.persistence.*;
+import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
 import java.util.Objects;
 
 @Entity
@@ -8,7 +10,9 @@ public class Grade {
     @Id
     @GeneratedValue
     private Long id;
+    @NotEmpty
     private double grade;
+    @NotEmpty
     @ManyToOne(fetch = FetchType.LAZY)
     private Student student;
 

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class SchoolService implements ServiceCrud<School, String> {
+public class SchoolService implements SimpleServiceCrud<School, String> {
     private final SchoolRepository schoolRepository;
 
     @Autowired

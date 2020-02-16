@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class SponsorService implements ServiceCrud<Sponsor, String> {
+public class SponsorService implements SimpleServiceCrud<Sponsor, String> {
     private final SponsorRepository sponsorRepository;
 
     @Autowired

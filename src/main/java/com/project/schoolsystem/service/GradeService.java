@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class GradeService implements ServiceCrud<Grade, Long> {
+public class GradeService implements SimpleServiceCrud<Grade, Long> {
     private final GradeRepository repository;
 
     @Autowired

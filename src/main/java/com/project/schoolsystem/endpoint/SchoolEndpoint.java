@@ -1,14 +1,14 @@
 package com.project.schoolsystem.endpoint;
 
 import com.project.schoolsystem.model.School;
-import com.project.schoolsystem.service.ServiceCrud;
+import com.project.schoolsystem.service.SimpleServiceCrud;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequestMapping(path = "api/v1/schools")
-public class SchoolEndpoint extends AbstractEndpoint<School, String> {
+public class SchoolEndpoint extends AbstractGenericEndpoint<School, String> {
     @Autowired
-    public SchoolEndpoint(ServiceCrud<School, String> service) {
+    public SchoolEndpoint(SimpleServiceCrud<School, String> service) {
         super(service);
     }
 }
