@@ -2,6 +2,7 @@ package com.project.schoolsystem.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -10,10 +11,14 @@ import java.util.Objects;
 public class Sponsor {
     @Id
     private String cpf;
+    @NotEmpty
     private String name;
+    @NotEmpty
     @Email
     private String email;
+    @NotEmpty
     private String password;
+    @NotEmpty
     @ManyToOne(fetch = FetchType.LAZY)
     private School school;
     @OneToMany(mappedBy = "sponsor",

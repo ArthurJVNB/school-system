@@ -1,6 +1,7 @@
 package com.project.schoolsystem.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -9,14 +10,18 @@ import java.util.Objects;
 public class Student {
     @Id
     private String enrollment;
+    @NotEmpty
     private String name;
+    @NotEmpty
     private String grade;
     @OneToMany(mappedBy = "student",
             cascade = CascadeType.ALL,
             orphanRemoval = true)
     private List<Grade> grades = new ArrayList<>();
+    @NotEmpty
     @ManyToOne(fetch = FetchType.LAZY)
     private Sponsor sponsor;
+    @NotEmpty
     @ManyToOne(fetch = FetchType.LAZY)
     private School school;
 
