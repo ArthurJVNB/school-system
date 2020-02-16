@@ -4,6 +4,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotEmpty;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -12,7 +13,9 @@ import java.util.Objects;
 public class School {
     @Id
     private String cnpj;
+    @NotEmpty
     private String name;
+    @NotEmpty
     private String password;
     @OneToMany(mappedBy = "school",
             cascade = CascadeType.ALL,
