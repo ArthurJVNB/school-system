@@ -11,12 +11,11 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.Optional;
 
-@RestController
-public abstract class AbstractGenericEndpoint<T, IdType> {
+public abstract class AbstractSimpleEndpoint<T, IdType> {
     protected final SimpleServiceCrud<T, IdType> service;
 
     @Autowired
-    public AbstractGenericEndpoint(SimpleServiceCrud<T, IdType> service) {
+    public AbstractSimpleEndpoint(SimpleServiceCrud<T, IdType> service) {
         this.service = service;
     }
 

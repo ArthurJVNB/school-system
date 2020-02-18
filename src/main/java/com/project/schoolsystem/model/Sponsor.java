@@ -18,7 +18,6 @@ public class Sponsor {
     private String email;
     @NotEmpty
     private String password;
-    @NotEmpty
     @ManyToOne(fetch = FetchType.LAZY)
     private School school;
     @OneToMany(mappedBy = "sponsor",
